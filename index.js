@@ -5,14 +5,14 @@ var express = require('express')
   , http = require('http')
   , app = express()
   , twitterA = require('node-twitter-api') 
+  , cookieParser = require('cookie-parser')
+  , session = require('express-session')
   , rms = require('./quotes.js') 
   , twitter = new twitterA({
     consumerKey: 'RR1DhG4BzaZXbo5Zs2ZAJ4omV',
     consumerSecret: '2cR9Hi24oddtg9WvC8nKJ9WWdt4T89KjspeakxvY5g2NSOMd4k',
-    callback: 'http://richardstallman.me/post'
+    callback: 'http://samshreds.com:4006/tweet'
   })
-  , requestTokenG = null 
-  , requestTokenSecretG = null
   , server = http.createServer(app);
 
 app.use(logger('dev'));
@@ -23,21 +23,26 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(session({secret: 'blah'}))
 
-twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
-    if (error) console.log("Error getting OAuth request token : " + error);
-    else {
-      requestTokenG = requestToken; 
-      requestTokenSecretG = requestTokenSecret; 
-    }
-});
 
 
 app.get('/', function (req, res){ 
-  res.render('index');
+  twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
+    if (error) console.log("Error getting OAuth request token : " + error);
+    else {
+      req.session.requestToken = requestToken; 
+      req.session.requestTokenSecret = requestTokenSecret;
+      res.render('index');
+    }
+  });
 });
 
-app.get('/post', function(req, res){ 
+app.get('/login', function (req, res){
+  res.redirect('https://twitter.com/oauth/authenticate?oauth_token=[' + req.session.requestToken + ']');
+});
+
+app.get('/tweet', function(req, res){ 
   res.render('post-stat',{quotes: rms});
 }); 
 

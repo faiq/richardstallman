@@ -1,0 +1,25 @@
+{
+  "name": "richardstallman",
+  "version": "1.0.0",
+  "description": "richard stallman, as a service ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faiqus/richardstallman.git"
+  },
+  "keywords": [
+    "richard",
+    "stallman",
+    "rms",
+    "parrots"
+  ],
+  "author": "faiq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faiqus/richardstallman/issues"
+  },
+  "homepage": "https://github.com/faiqus/richardstallman"
+}

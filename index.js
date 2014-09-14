@@ -43,7 +43,7 @@ app.get('/login', function (req, res){
 });
 
 app.get('/tweet', function(req, res){
-  //console
+  console.log(req.params, req.body);
   res.render('post-stat',{quotes: rms});
 });
 

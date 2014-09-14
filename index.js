@@ -51,7 +51,20 @@ app.get('/tweet', function(req, res){
 });
 
 app.post('/post', function (req, res){ 
-    
+  twitter.statuses("update", {
+        status: "Hello world!"
+    },
+    req.session.accessToken,
+    req.session.accessTokenSecret,
+    function(error, data, response) {
+        if (error) {
+            // something went wrong
+            console.log('fail') 
+        } else {
+          console.log('suxess')
+        }
+    }
+);    
 });
 
 server.listen(4006, function(){

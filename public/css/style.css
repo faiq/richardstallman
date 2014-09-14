@@ -33,3 +33,7 @@ ain, body, html {
 	padding: 30px;
 	background: rgba(174,174,174,0.5);
 }
+
+.content {
+	max-height: 100%;
+}

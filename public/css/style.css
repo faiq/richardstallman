@@ -1,4 +1,4 @@
-main, body, html {
+ain, body, html {
   height:100%;
   margin:0;
 }
@@ -31,10 +31,5 @@ main, body, html {
 	width: 40em;
 	text-align: center;
 	padding: 30px;
-	background-color: #AEAEAE;
-	opacity: 0.5;
-}
-
-.content {
-	opacity: 2;
+	background: rgba(174,174,174,0.5);
 }

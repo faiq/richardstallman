@@ -2,6 +2,7 @@ var express = require('express')
   , logger = require('morgan')
   , bodyParser = require('body-parser')
   , path = require('path')
+  , util = require('util') 
   , http = require('http')
   , app = express()
   , twitterA = require('node-twitter-api')
@@ -43,7 +44,7 @@ app.get('/login', function (req, res){
 });
 
 app.get('/tweet', function(req, res){
-  console.log('adsfasfasdf' + req.params);
+  console.log(util.inspect(req.params, false, null));
   req.session.oauthToken = req.params.oauth_token; 
   req.session.oauth_verifier = req.params.oauth_verifier;
   res.render('post-stat',{quotes: rms});

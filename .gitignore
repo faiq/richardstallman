@@ -1,3 +1,6 @@
+# custom shit
+*.swp
+
 # Logs
 logs
 *.log

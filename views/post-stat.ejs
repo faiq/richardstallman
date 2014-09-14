@@ -12,16 +12,18 @@
 		<div class="content large-12 columns">
             <h2>Richard Stallman My Twitter</h2>
             <div id="quote">
-                <h3>Quote goes here</h3>
+                <h3></h3>
             </div>
-            <a class="button large-6 columns">New quote</a>
+            <a class="button large-6 columns" id="newQuote">New quote</a>
             <a class="button large-6 columns" href="/send">Send tweet</a>
 			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 		</div>
 	</div>
     <script src="/foundation/js/vendor/custom.modernizr.js"></script>
     <script src="/foundation/js/foundation.min.js"></script>
-    <script>quotes = <%= quotes %>; console.log(quotes); </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/public/js/select.js"></script>
+    <script>quotes = <% quotes %>; console.log(quotes); </script>
     <script>
         $(document).foundation();
     </script>

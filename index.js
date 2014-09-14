@@ -1,6 +1,6 @@
 var express = require('express')
   , logger = require('morgan')
-  , bodyParser = require('body-parser') 
+  , bodyParser = require('body-parser')
   , path = require('path')
   , http = require('http')
   , app = express()
@@ -14,10 +14,10 @@ app.use(logger('dev'))
 app.set('views', './views')
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res){ 
+app.get('/', function (req, res){
   res.sendfile('./views/index.html')
 });
 
-server.listen(3000, function(){
-  console.log('listening on *:3000');
-}); 
+server.listen(4006, function(){
+  console.log('listening on *:4006');
+});

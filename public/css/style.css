@@ -3,7 +3,7 @@ main, body, html {
   margin:0;
 }
 
-.wrapper {
+.bg {
 	background: url('../img/stallman.jpg') no-repeat top center fixed;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,4 +17,24 @@ main, body, html {
   filter: blur(5px);
 	height: 100%;
 	width: 100%;
+	position: fixed;
+}
+
+.wrapper {
+	bottom: 0;
+	height: 20em;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40em;
+	text-align: center;
+	padding: 30px;
+	background-color: #AEAEAE;
+	opacity: 0.5;
+}
+
+.content {
+	opacity: 2;
 }

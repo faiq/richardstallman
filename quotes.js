@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = { quotes: [
   "Sharing is good, and with digital technology, sharing is easy.",
   "If you want to accomplish something in the world, idealism is not enough - you need to choose a method that works to achieve the goal.",
   "Proprietary software tends to have malicious features. The point is with a proprietary program, when the users don't have the source code, we can never tell. So you must consider every proprietary program as potential malware.",
@@ -39,4 +39,4 @@ module.exports = [
   "The interesting thing about cloud computing is that we've redefined cloud computing to include everything that we already do.",
   "Facebook collects a lot of data from people and admits it. And it also collects data which isn't admitted. And Google does too. As for Microsoft, I don't know. But I do know that Windows has features that send data about the user.",
   "If there is a Like button in a page, Facebook knows who visited that page. And it can get IP address of the computer visiting the page even if the person is not a Facebook user."
-]
+]}

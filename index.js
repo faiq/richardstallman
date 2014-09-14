@@ -2,7 +2,7 @@ var express = require('express')
   , logger = require('morgan')
   , bodyParser = require('body-parser')
   , path = require('path')
-  , util = require('util') 
+  , util = require('util')
   , http = require('http')
   , app = express()
   , twitterA = require('node-twitter-api')
@@ -44,14 +44,14 @@ app.get('/login', function (req, res){
 });
 
 app.get('/tweet', function(req, res){
-  console.log(util.inspect(req.params, false, null));
-  req.session.oauthToken = req.params.oauth_token; 
-  req.session.oauth_verifier = req.params.oauth_verifier;
-  res.render('post-stat',{quotes: rms});
+  console.log(util.inspect(req.query, false, null));
+  req.session.oauthToken = req.query.oauth_token;
+  req.session.oauth_verifier = req.query.oauth_verifier;
+  res.render('post-stat', {quotes: rms.quotes});
 });
 
-app.post('/post', function (req, res){ 
-    
+app.post('/post', function (req, res){
+
 });
 
 server.listen(4006, function(){

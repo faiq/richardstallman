@@ -15,14 +15,17 @@
                 <h3></h3>
             </div>
             <a class="button large-6 columns" id="newQuote">New quote</a>
-            <a class="button large-6 columns" href="/send">Send tweet</a>
+            <form method="POST" action="/post">
+                <input type="hidden" id="tweet" name="tweet" value="LOL"></input>
+                <button class="button large-6 columns">Send tweet</button>
+            </form>
 			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 		</div>
 	</div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="/foundation/js/vendor/custom.modernizr.js"></script>
     <script src="/foundation/js/foundation.min.js"></script>
-    <script src="/public/js/select.js"></script>
+    <script src="/js/select.js"></script>
         <%=quotes%>
     <script>
         $(document).foundation();

@@ -50,16 +50,21 @@ app.get('/tweet', function(req, res){
   res.render('post-stat', {quotes: rms.quotes});
 });
 
+app.get('/gettweet', function(req, res) {
+  res.json(rms.quotes[Math.floor(Math.random()*rms.quotes.length)]);
+});
+
 app.post('/post', function (req, res){
+    console.log(req.body);
   twitter.statuses("update", {
-        status: "Hello world!"
+        status: req.body.tweet
     },
     req.session.accessToken,
     req.session.accessTokenSecret,
     function(error, data, response) {
         if (error) {
             // something went wrong
-            console.log('fail')
+            console.log(error)
         } else {
           console.log('suxess')
         }

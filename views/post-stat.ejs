@@ -1,7 +1,29 @@
-<!DOCTYPE html> 
-<html> 
-  <title>Post Stallman Shit</title> 
-  <body> 
-    <%=quotes%>         
-  </body> 
-</html> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Richard Stallman as a service</title>
+    <link rel="stylesheet" href="/foundation/css/normalize.css">
+    <link rel="stylesheet" href="/foundation/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="bg"></div>
+	<div class="wrapper row">
+		<div class="content large-12 columns">
+            <h2>Richard Stallman My Twitter</h2>
+            <div id="quote">
+                <h3>Quote goes here</h3>
+            </div>
+            <a class="button large-6 columns">New quote</a>
+            <a class="button large-6 columns" href="/send">Send tweet</a>
+			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+		</div>
+	</div>
+    <script src="/foundation/js/vendor/custom.modernizr.js"></script>
+    <script src="/foundation/js/foundation.min.js"></script>
+    <script>quotes = <%= quotes %>; console.log(quotes); </script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

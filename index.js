@@ -43,7 +43,12 @@ app.get('/login', function (req, res){
 });
 
 app.get('/tweet', function(req, res){
+  //console
   res.render('post-stat',{quotes: rms});
+});
+
+app.post('/post', function (req, res){ 
+    
 });
 
 server.listen(4006, function(){

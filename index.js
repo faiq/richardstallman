@@ -5,6 +5,7 @@ var express = require('express')
   , http = require('http')
   , app = express()
   , twitterA = require('node-twitter-api') 
+  , rms = require('./quotes.js') 
   , twitter = new twitterA({
     consumerKey: 'RR1DhG4BzaZXbo5Zs2ZAJ4omV',
     consumerSecret: '2cR9Hi24oddtg9WvC8nKJ9WWdt4T89KjspeakxvY5g2NSOMd4k',
@@ -16,6 +17,7 @@ var express = require('express')
 
 app.use(logger('dev'));
 app.set('views', './views');
+app.set('view engine', 'ejs')
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
@@ -32,12 +34,13 @@ twitter.getRequestToken(function(error, requestToken, requestTokenSecret, result
 
 
 app.get('/', function (req, res){ 
-  res.sendfile('./views/index.html');
+  res.render('index');
 });
 
 app.get('/post', function(req, res){ 
-  res.sendfile('./views/post-stat.html');
+  res.render('post-stat',{quotes: rms});
 }); 
+
 server.listen(4006, function(){
   console.log('listening on *:4006');
 });

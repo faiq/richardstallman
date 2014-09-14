@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(logger('dev'))
 app.set('views', './views')
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res){ 
   res.sendfile('./views/index.html')
